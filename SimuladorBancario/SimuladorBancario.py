@@ -11,7 +11,11 @@ class SimuladorBancario:
     cedula = ''
     nombre = ''
     mesActual = 0
+    "# Vip=1 Platino=2 normal=3"
+    cliente=0
     
+
+
     '''----------------------------------------------------------------
     # Asociaciones
     ----------------------------------------------------------------'''
@@ -22,7 +26,12 @@ class SimuladorBancario:
     '''----------------------------------------------------------------
     # Metodos
     ----------------------------------------------------------------'''
-    
+    def __init__(self,cliente,cedula,nombre,mesActual):
+        self.cliente=cliente
+        self.cedula=cedula
+        self.nombre=nombre
+        self.mesActual=mesActual
+
     def CalcularSaldoToTal(self):
         #Forma 1
         return self.ahorros.ConsultarSaldo() + self.corriente.ConsultarSaldo()
@@ -46,7 +55,7 @@ class SimuladorBancario:
     def DuplicarAhorro(self):
         self.ConsignarCuentaAhorros(self.ahorros.ConsultarSaldo())
     
-    def RetirarCuentaCorriente(self, monto):
+    def RetirarCuentaCorriente(self,monto):
         self.corriente.RetirarMonto(monto)
     
     def RetirarCuentaAhorros(self, monto):
@@ -59,3 +68,7 @@ class SimuladorBancario:
         self.RetirarCuentaCorriente(total)
         
         return total
+    
+    def CambiarTipoCliente(self,nuevocliente):
+        self.cliente(self,nuevocliente)
+    

@@ -24,12 +24,11 @@ class Empleado:
     '''----------------------------------------------------------------
     # Metodos
     ----------------------------------------------------------------'''
-    def __init__(self,nombres,apellidos,salario,sexo,hijos):
+    def __init__(self,nombres,apellidos,salario,sexo):
         self.nombres=nombres
         self.apellidos=apellidos
         self.salario=salario
         self.sexo=sexo
-        self.numeroshijosempleando=hijos
 
     def CambiarSalario(self, nSalario):
         #aqui va el codigo
@@ -76,15 +75,18 @@ class Empleado:
         return self.CalcularSalarioAnual()*0.195
     
     def CantidadHijosEmpleados(self):
-        self.numeroshijosempleando(0)
+        cantidadhijos=1
+        self.numeroshijosempleando+cantidadhijos
 
     def CalcularAuxilio(self):
-        self.CantidadHijosEmpleados*0.05
+        auxilio=0.05
+        self.CantidadHijosEmpleados*auxilio
 
-    def CalcularAuxilioParametro(self,saldo):
-        self.CalcularAuxilio*saldo
+    def CalcularAuxilioParametro(self,salario):
+        porcentaje=salario
+        self.numeroshijosempleando*porcentaje
 
-    def DiferenciaSalarial(self,OtroSalario):
-        self. ConsultarSalario-OtroSalario
+    def DiferenciaSalarial(self,oempleado):
+        self.ConsultarSalario-oempleado
 
 
