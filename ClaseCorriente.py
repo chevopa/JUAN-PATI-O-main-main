@@ -19,6 +19,7 @@ class CuentaCorriente:
         
     def RetirarMonto(self, monto):
         # Forma 1
+        monto=0.01
         self.saldo -= monto
         # Forma 2
         # self.saldo = self.saldo - monto
